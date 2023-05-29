@@ -8,7 +8,7 @@
 <script setup>
 const {id} = useRoute().params
 const url = 'https://fakestoreapi.com/products/'
-const { data:produit} = await useFetch(url ,{key: id})
+const { data:produit} = await useFetch(url + id)
 console.log("produit",produit);
 if (!produit.value) {
     throw createError({statusCode:404 , statusMessage:'produit pas dispo' , fatal:true})
